@@ -1,7 +1,8 @@
 
 public class Personagem {
 	private String nome, descricao;
-	private int nivel, cash, pe, pv, pm;
+	private int nivel, cash, pe;
+	float pv, pm;
 	private Classe classe;
 	
 	public Personagem(String nome, int tipo){
@@ -10,6 +11,8 @@ public class Personagem {
 		this.nivel = 1;
 		this.cash = 0;
 		this.setClasse(tipo);
+		this.setPvMax();
+		this.setPmMax();
 	}
 	
 	//NOME----------------------------------------------------------------
@@ -52,7 +55,7 @@ public class Personagem {
 	}
 	//---------------------------------------------------------------------
 	
-	//PONTO DE EXPERIENCIA----------------------------------------------------------------
+	//PONTO DE EXPERIÊNCIA----------------------------------------------------------------
 	public void setPe(int pe){
 		this.pe = pe;
 	}
@@ -67,7 +70,7 @@ public class Personagem {
 		this.pv = pv;
 	}
 	
-	public int getPv(){
+	public float getPv(){
 		return pv;
 	}
 	//---------------------------------------------------------------------
@@ -77,39 +80,86 @@ public class Personagem {
 		this.pm = pm;
 	}
 	
-	public int getPm(){
+	public float getPm(){
 		return pm;
 	}
-	//----------------------------------------------------------------------
+	//---------------------------------------------------------------------
 	
-	//DEFINE A CLASSE QUE O PERSONAGEM VAI SER.
+	//CLASSE----------------------------------------------------------------------
 	public void setClasse(int tipo){
 		switch(tipo){
-			//1 = GUERREIRO
 		case 1: this.classe = new Guerreiro();
 				break;
-			//2 = ARQUEIRO
 		case 2: this.classe = new Arqueiro();
 				break;
-			//3 = MAGO
 		case 3: this.classe = new Mago();
 				break;
-			//4 = MONSTRO				
 		case 4: this.classe = new Monstro();
 				break;
 		}
 	}
-	//PEGA AGILIDADE
+	//---------------------------------------------------------------------
+	
+	//AGILIDADE----------------------------------------------------------------
 	public int getAgil(){
 		return this.getNivel() * classe.getAgilidade();
 	}
-	//PEGA FORCA
+	//---------------------------------------------------------------------
+	
+	//FORCA----------------------------------------------------------------
 	public int getForca(){
 		return this.getNivel() * classe.getForca();
 	}
-	//PEGA INTELIGENCIA
+	//---------------------------------------------------------------------
+	
+	//INTELIGENCIA----------------------------------------------------------------
 	public int getIntel(){
 		return this.getNivel() * classe.getInteligencia();
 	}
+	//---------------------------------------------------------------------
+	
+	//PONTO DE VIDA MAXIMO----------------------------------------------------------------
+	public void setPvMax(){
+		this.pv = this.getPvMax();
+	}
+	
+	public float getPvMax(){
+		return this.nivel * this.getForca() + (this.nivel * (this.getAgil()/2));
+	}
+	//---------------------------------------------------------------------
+	
+	//PONTO DE MAGIA MAXIMO----------------------------------------------------------------
+	public void setPmMax(){
+		this.pv = this.getPmMax();
+	}
+	
+	public float getPmMax(){
+		return this.nivel * this.getIntel() + (this.getForca() *(this.getAgil()/3));
+	}
+	//---------------------------------------------------------------------
+	
+	//PONTO DE VIDA SER RECUPERADO----------------------------------------------------------------
+	public void setPvRec(){
+		this.pv += (int) (Math.ceil((0.1*this.getForca()+this.nivel*0.1)));
+		if(this.pv > this.getPvMax()){
+			this.pv = this.getPvMax();
+		}
+	}
+	//---------------------------------------------------------------------
+	
+	//PONTO DE MAGIA A SER RECUPERADO----------------------------------------------------------------
+	public void setPmRec(){
+		this.pm += (int)(Math.ceil((0.1*this.getIntel()+this.nivel*0.05)));
+		if(this.pm > this.getPmMax()){
+			this.pm = this.getPmMax();
+		}
+	}
+	//---------------------------------------------------------------------
+	
+	//CHAMADO QUANDO UM INIMIGO MORRE---------------------------------------------------
+	public void setCashAdv(Personagem nivelAdv){
+		this.cash += nivelAdv.nivel * 10;
+	}
+	//---------------------------------------------------------------------
 }
 
