@@ -31,11 +31,16 @@
 			String nome = null;
 			int tipo;
 			Personagem retorno = null;
-				System.out.printf("\nDigite a classe do seu Personagem:\n ");
-				System.out.printf("\n[1] - GUERREIRO\n ");
-				System.out.printf("\n[2] - ARQUEIRO\n ");
-				System.out.printf("\n[3] - MAGO\n ");
-				System.out.printf("\n[4] - MONSTRO\n ");
+			
+				System.out.printf("\n *-------------------------------------*");
+				System.out.printf("\n |		      CLASSES               |");
+				System.out.printf("\n *-------------------------------------*");
+				System.out.printf("\n |   [1] - GUERREIRO		    |");
+				System.out.printf("\n |   [2] - ARQUEIRO		    |");
+				System.out.printf("\n |   [3] - MAGO			    |");
+				System.out.printf("\n |   [4] - MONSTRO			    |");
+				System.out.printf("\n *-------------------------------------*");
+				System.out.printf("\n  Digite a classe do seu Personagem: ");
 				tipo = ler.nextInt();
 				System.out.print("\n\n");
 				
