@@ -21,7 +21,7 @@ public class Mago extends Classe {
 	public void setHabilidades(Personagem p){
         habilidades = new Habilidade[3]; //ALVO | TRUE = ALVO UNICO | FALSE = TOOS OS ALVOS
 	    
-		habilidades[0] = new Habilidade("Enfraquecer",0.2,0.3,0,5,true,0,0,0);		
+		habilidades[0] = new Habilidade("Enfraquecer",0.2,0.3,0,5,true,0,0,0,p);		
 		habilidades[1] = new Habilidade("Cura amigo",0,0,0.8*-1,4,true,0,0,0,p);
 		habilidades[2] = new Habilidade("Socar",0.1,0.1,0,2,true,0,0,0,p);	
 	}
