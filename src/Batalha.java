@@ -8,6 +8,14 @@
 				this.setNome();
 			}
 
+		//SORTEIO DA MOEDA
+		//int sorte = (int) Math.ceil((Math.random()*100))%2; //CALCULA RANDOMICAMENTE ENTRE 0 E 1
+		//if(sorte==0){
+		//	System.out.printf("\n CARA! VEZ DO "+p.noNome); //NOME DO ALIADO
+		//}else if(sorte==1){
+		//	System.out.printf("\n COROA! VEZ DO "+p.noNome); //NOME DO INIMIGO
+		//}
+
 			public void inicio(){
 				int i=0;
 				
