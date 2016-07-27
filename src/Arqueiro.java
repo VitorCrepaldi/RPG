@@ -15,7 +15,7 @@ public class Arqueiro extends Classe {
 			habilidades = new Habilidade[3]; 
 			
 	
-	//		habilidades[0] = new Habilidade("Flecha Encantada",0.4,0.8,0,5,true,0,0,0);
+			habilidades[0] = new Habilidade("Flecha Encantada",0.4,0.8,0,5,true,0,0,0,p);
 			habilidades[1] = new Habilidade("Atirar Flecha",0.5,0.3,0,4,true,0,0,0,p);
 			habilidades[2] = new Habilidade("Socar",0.1,0.3,0,4,true,0,0,0,p);
 				
