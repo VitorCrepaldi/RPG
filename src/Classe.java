@@ -1,6 +1,7 @@
 
+
 public abstract class Classe {
-	private String nome;
+	protected String nome;
 	protected int agil,forca,intel;
 	Habilidade[] habilidades;
 
@@ -9,6 +10,9 @@ public abstract class Classe {
 	public abstract int getAgilidade();
 	public abstract int getForca();
 	public abstract String getDescClasse();*/
+	public Classe(){
+		this.setNome(nome);
+	}
 	
 	public void setNome(String nome){
 		if(!nome.trim().isEmpty()){
