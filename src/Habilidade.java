@@ -1,13 +1,13 @@
 
 public class Habilidade {
-	 float pontosMagia;
-	 String nomeHabilidade;
-	 float tempoDescanso;
-	 float dano;
-	 boolean alvo;
-	 Personagem p;
-	 float valorAgilM;
-	 float valorForcaM;
+	float pontosMagia;
+	String nomeHabilidade;
+	float tempoDescanso;
+	float dano;
+	boolean alvo;
+	Personagem p;
+	float valorAgilM;
+	float valorForcaM;
 	float valorIntelM;
 	float valorIntel;
 	float valorForca;
