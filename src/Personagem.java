@@ -1,14 +1,16 @@
 //TESTE
+
 public class Personagem {
 	private String nome, descricao;
 	private int nivel, cash, pe, pv, pm;
-	Classe classe;
+	private Classe classe;
 	
-	public Personagem(){
+	public Personagem(String nome, int tipo){
 		this.setNome(nome);
 		this.setDescricao(descricao);
 		this.nivel = 1;
 		this.cash = 0;
+		this.setClasse(tipo);
 	}
 	
 	//NOME----------------------------------------------------------------
@@ -42,7 +44,7 @@ public class Personagem {
 	//---------------------------------------------------------------------
 	
 	//MOEDA----------------------------------------------------------------
-	public void setCassh(int cash){
+	public void setCash(int cash){
 		this.cash = cash;
 	}
 
@@ -79,7 +81,12 @@ public class Personagem {
 	public int getPm(){
 		return pm;
 	}
-	//---------------------------------------------------------------------
-
+	//----------------------------------------------------------------------
+	public void setClasse(int tipo){
+		switch(tipo){
+		case 1: this.classe = new Guerreiro();
+				break;
+		}
+	}
 }
 
