@@ -5,6 +5,9 @@ public abstract class Classe {
 	protected int agil,forca,intel;
 	Habilidade[] habilidades;
 
+	public abstract int getAgilidade();
+	public abstract int getForca();
+	public abstract int getInteligencia();
 	
 	/*public abstract int getInteligencia();
 	public abstract int getAgilidade();

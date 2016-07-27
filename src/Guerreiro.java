@@ -35,4 +35,16 @@ public class Guerreiro extends Classe {
 	public int getTipo(){
 		return 1;
 	}
+	
+	public int getAgilidade(){
+		return this.agil;
+	}
+	
+	public int getForca(){
+		return this.forca;
+	}
+	
+	public int getInteligencia(){
+		return this.intel;
+	}
 }
