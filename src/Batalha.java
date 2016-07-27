@@ -11,9 +11,17 @@
 		//SORTEIO DA MOEDA
 		//int sorte = (int) Math.ceil((Math.random()*100))%2; //CALCULA RANDOMICAMENTE ENTRE 0 E 1
 		//if(sorte==0){
-		//	System.out.printf("\n CARA! VEZ DO "+p.noNome); //NOME DO ALIADO
+		//  System.out.printf("\n *-------------------------------------*");
+		//  System.out.printf("\n |                 MOEDA               |");
+		//  System.out.printf("\n *-------------------------------------*");
+		//	System.out.printf("\n CARA!\n VEZ DO "+p.noNome); //NOME DO ALIADO
+		//  System.out.printf("\n *-------------------------------------*");
 		//}else if(sorte==1){
+		//  System.out.printf("\n *-------------------------------------*");
+		//  System.out.printf("\n |                 MOEDA               |");
+		//  System.out.printf("\n *-------------------------------------*");
 		//	System.out.printf("\n COROA! VEZ DO "+p.noNome); //NOME DO INIMIGO
+		//  System.out.printf("\n *-------------------------------------*");
 		//}
 
 			public void inicio(){
