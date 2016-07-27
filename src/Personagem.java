@@ -1,4 +1,3 @@
-//TESTE
 
 public class Personagem {
 	private String nome, descricao;
@@ -86,17 +85,22 @@ public class Personagem {
 		switch(tipo){
 		case 1: this.classe = new Guerreiro();
 				break;
+		case 2: this.classe = new Arqueiro();
+				break;
+		case 3: this.classe = new Mago();
+				break;
+		case 4: this.classe = new Monstro();
+				break;
 		}
 	}
-	
-	/* Ganho de Experiência */
-	public void ganharXP(int pe, int nivelAdv){
-		int pen = this.nivel * 25;
-		pe += nivelAdv * 5;
-		if(pe >= pen){
-			this.nivel++;
-			pe=0;
-		}
+	public int getAgil(){
+		return this.getNivel() * classe.getAgilidade();
+	}
+	public int getForca(){
+		return this.getNivel() * classe.getForca();
+	}
+	public int getIntel(){
+		return this.getNivel() * classe.getInteligencia();
 	}
 }
 
