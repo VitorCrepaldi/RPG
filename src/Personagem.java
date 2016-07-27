@@ -88,5 +88,15 @@ public class Personagem {
 				break;
 		}
 	}
+	
+	/* Ganho de Experiência */
+	public void ganharXP(int pe, int nivelAdv){
+		int pen = this.nivel * 25;
+		pe += nivelAdv * 5;
+		if(pe >= pen){
+			this.nivel++;
+			pe=0;
+		}
+	}
 }
 
