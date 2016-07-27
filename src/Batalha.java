@@ -10,7 +10,8 @@ public class Batalha {
 	
 	Personagem [] grupo = new Personagem[4];
 	
-	for(x=0;x<2;x++){
+	for(x=0;x<2;x++){//LIMITE DE 2 PERSONAGENS(SO PARA FAZER TESTE,DEPOIS QUERIA ADICIONAR UMA OPCAO PARA QUE O USUARIO POSSA
+	//	ESCOLHER QUANTOS PERSONAGENS QUER CRIAR //VITOR)
 	//PEDE PARA DIGITAR O NOME DO PERSONAGEM
 	System.out.printf("\nDigite o nome do Personagem : ");
 	    nome = ler.next();
