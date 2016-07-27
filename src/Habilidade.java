@@ -5,9 +5,9 @@ public class Habilidade {
 	 float tempoDescanso;
 	 float dano;
 	 boolean alvo;
-	Personagem personagem;
-	float valorAgilM;
-	float valorForcaM;
+	 Personagem p;
+	 float valorAgilM;
+	 float valorForcaM;
 	float valorIntelM;
 	float valorIntel;
 	float valorForca;
@@ -33,16 +33,7 @@ public class Habilidade {
 	
 	//--------------------------------DANO--------------------------------
 	public int getDano(){
-		int dano = p.getNivel()*Math.ceil(p.getAgil()*valorAgil+p.getForca()*valorForca+p.getIntel()*valorIntel);
-		int skillEspada = p.getNivel()*Math.ceil(p.getAgil*0.3+p.getForca*0.7); //FAZ O CALCULO DA ESPADA NORMAL
-		int skillArco = p.getNivel()*Math.ceil(p.getAgil*0.5+p.getForca*0.3); //FAZ O CALCULO DO ARCO NORMAL
-		if(nomeHabilidade=="Espada Flamejante"){ //CONFERE SE O NOME DE HABILIDADE = ESPADA FLAMEJANTE
-			dano=skillEspada+Math.ceil(p.getIntel*0.4); //DANO DA ESPADA NORMAL + CALCULO ESPADA FLAMEJANTE
-			return dano;
-		}else if(nomeHabilidade=="Atirar Flecha"){
-			dano=skillArco+Math.ceil(p.getIntel*0.4);//DANO DO ARCO NORMAL + CALCULO ATIRAR FLECHA
-			return dano;
-		}
+		int dano = (int)(p.getNivel()*Math.ceil(p.getAgil()*valorAgil+p.getForca()*valorForca+p.getIntel()*valorIntel));
 		return dano;
 		
 	}
@@ -57,7 +48,7 @@ public class Habilidade {
 	
 	//--------------------------------ALVO--------------------------------
 	public int getPontosMagia(){
-		int pontosMagia = p.getNivel()*Math.ceil(p.getAgil()*valorAgilM+p.getForca()*valorForcaM+p.getIntel()*valorIntelM);
+		int pontosMagia = (int)(p.getNivel()*Math.ceil(p.getAgil()*valorAgilM+p.getForca()*valorForcaM+p.getIntel()*valorIntelM));
 		return pontosMagia;
 	}
 	//--------------------------------FIM---------------------------------
