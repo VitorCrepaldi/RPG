@@ -34,6 +34,15 @@ public class Habilidade {
 	//--------------------------------DANO--------------------------------
 	public int getDano(){
 		int dano = p.getNivel()*Math.ceil(p.getAgil()*valorAgil+p.getForca()*valorForca+p.getIntel()*valorIntel);
+		int skillEspada = p.getNivel()*Math.ceil(p.getAgil*0.3+p.getForça*0.7); //FAZ O CÁLCULO DA ESPADA NORMAL
+		int skillArco = p.getNivel()*Math.ceil(p.getAgil*0.5+p.getForça*0.3); //FAZ O CÁLCULO DO ARCO NORMAL
+		if(nomeHabilidade=="Espada Flamejante"){ //CONFERE SE O NOME DE HABILIDADE = ESPADA FLAMEJANTE
+			dano=skillEspada+Math.ceil(p.getIntel*0.4); //DANO DA ESPADA NORMAL + CÁLCULO ESPADA FLAMEJANTE
+			return dano;
+		}else if(nomeHabilidade=="Atirar Flecha"){
+			dano=skillArco+Math.ceil(p.getIntel*0.4);//DANO DO ARCO NORMAL + CÁLCULO ATIRAR FLECHA
+			return dano;
+		}
 		return dano;
 		
 	}
