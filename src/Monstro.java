@@ -1,7 +1,7 @@
 
 public class Monstro extends Classe {
 	//AGIL,FORCA,INTEL
-	public Monstro(Personagem p){
+	public Monstro(/*Personagem p*/){
 
 		//ORDEM DE PREENCHIMENTO /AGILIDADE,FORCA,INTELIGENCIA
 		//ALVO | TRUE = ALVO UNICO | FALSE = TOOS OS ALVOS
