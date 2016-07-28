@@ -1,7 +1,7 @@
 
 public class Personagem {
 	private String nome, descricao;
-	private int nivel, cash, pe;
+	private int nivel, cash, pe, tempoDescanso;
 	float pv, pm;
 	private Classe classe;
 	
@@ -71,7 +71,7 @@ public class Personagem {
 	}
 	
 	public float getPv(){
-		return pv;
+		return this.pv;
 	}
 	//---------------------------------------------------------------------
 	
@@ -81,7 +81,7 @@ public class Personagem {
 	}
 	
 	public float getPm(){
-		return pm;
+		return this.pm;
 	}
 	//---------------------------------------------------------------------
 	
@@ -96,7 +96,29 @@ public class Personagem {
 				break;
 		case 4: this.classe = new Monstro();
 				break;
+		default:this.classe = new Guerreiro();
+				break;
 		}
+	}
+	
+	public String getClasse(){
+		String t = null;
+		int ax = classe.getTipo();
+		switch(ax){
+		case 1:
+			t = "Guerreiro"; 
+			break;
+		case 2:
+			t = "Arqueiro";
+			break;
+		case 3:
+			t = "Mago";
+			break;
+		case 4:
+			t = "Monstro"; 
+			break;
+		}
+		return t;
 	}
 	//---------------------------------------------------------------------
 	
@@ -124,17 +146,19 @@ public class Personagem {
 	}
 	
 	public float getPvMax(){
-		return this.nivel * this.getForca() + (this.nivel * (this.getAgil()/2));
+		float v = (float) (Math.ceil(this.getNivel() * this.getForca() + (this.getNivel() * (this.getAgil()/2))));
+		return v;
 	}
 	//---------------------------------------------------------------------
 	
 	//PONTO DE MAGIA MAXIMO----------------------------------------------------------------
 	public void setPmMax(){
-		this.pv = this.getPmMax();
+		this.pm = this.getPmMax();
 	}
 	
 	public float getPmMax(){
-		return this.nivel * this.getIntel() + (this.getForca() *(this.getAgil()/3));
+		float m =(float) (Math.ceil(this.nivel * this.getIntel() + this.getForca() *(this.getAgil()/3)));
+		return m;
 	}
 	//---------------------------------------------------------------------
 	
@@ -161,5 +185,20 @@ public class Personagem {
 		this.cash += nivelAdv.nivel * 10;
 	}
 	//---------------------------------------------------------------------
+
+	public void reduzTempoDesc(){
+		this.setTempoDescanso(this.getTempoDescanso()-1);
+	}
+	
+	public int getTempoDescanso() {
+		return tempoDescanso;
+	}
+
+	public void setTempoDescanso(int tempoDescanso) {
+		if(tempoDescanso > 0){
+			this.tempoDescanso = tempoDescanso;
+		}else
+			this.tempoDescanso = 0;
+	}
 }
 
