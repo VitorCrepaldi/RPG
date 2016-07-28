@@ -21,11 +21,13 @@ public class Batalha {
 			}
 			
 			for(i=0;i<grupo.length;i++){
+				System.out.printf("\n *-----------------------------------------------------------------------* ");
 				System.out.printf("Nome: " + grupo[i].getNome() + " | Classe: " + grupo[i].getClasse());
 				System.out.printf(" | Nível: " + grupo[i].getNivel() + " | Cash: " + grupo[i].getCash());
 				System.out.printf(" | Vida: " + grupo[i].getPv() + " | Mana: " + grupo[i].getPm() + "\n");
 				System.out.printf(" | Agilidade: " + grupo[i].getAgil() + " | Força: " + grupo[i].getForca());
 				System.out.printf(" | Inteligência: " + grupo[i].getIntel() + "\n");
+				System.out.printf("\n *-----------------------------------------------------------------------* ");
 			}
 			Personagem[] ini = new Personagem[2];
 			System.out.printf("Inimigos:");
@@ -37,6 +39,7 @@ public class Batalha {
 				System.out.printf(" | Vida: " + ini[i].getPv() + " | Mana: " + ini[i].getPm() + "\n");
 				System.out.printf(" | Agilidade: " + ini[i].getAgil() + " | Força: " + ini[i].getForca());
 				System.out.printf(" | Inteligência: " + ini[i].getIntel() + "\n");
+				System.out.printf("\n *-----------------------------------------------------------------------* ");
 			}
 			this.treta(grupo, ini);
 		}
@@ -50,14 +53,14 @@ public class Batalha {
 		//Personagem retorno = null;
 			System.out.printf("Digite o nome do Personagem:");
 			nome = ler.nextLine();
-			System.out.printf("\n *-------------------------------------* ");
-			System.out.printf("\n |               CLASSES               | ");
-			System.out.printf("\n *-------------------------------------* ");
+			System.out.printf("\n *---------------------------------------* ");
+			System.out.printf("\n |                CLASSES                | ");
+			System.out.printf("\n *---------------------------------------* ");
 			System.out.printf("\n |    [1]. GUERREIRO                     | ");
 			System.out.printf("\n |    [2]. ARQUEIRO                      | ");
 			System.out.printf("\n |    [3]. MAGO                          | ");
 			System.out.printf("\n |    [4]. MONSTRO                       | ");
-			System.out.printf("\n *-------------------------------------* ");
+			System.out.printf("\n *---------------------------------------* ");
 			System.out.printf("\n  Digite a classe do seu Personagem: ");
 			tipo = ler.nextInt();
 			System.out.print("\n\n");
