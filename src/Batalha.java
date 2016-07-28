@@ -53,10 +53,10 @@ public class Batalha {
 			System.out.printf("\n *-------------------------------------* ");
 			System.out.printf("\n |               CLASSES               | ");
 			System.out.printf("\n *-------------------------------------* ");
-			System.out.printf("\n |    1. GUERREIRO                     | ");
-			System.out.printf("\n |    2. ARQUEIRO                      | ");
-			System.out.printf("\n |    3. MAGO                          | ");
-			System.out.printf("\n |    4. MONSTRO                       | ");
+			System.out.printf("\n |    [1]. GUERREIRO                     | ");
+			System.out.printf("\n |    [2]. ARQUEIRO                      | ");
+			System.out.printf("\n |    [3]. MAGO                          | ");
+			System.out.printf("\n |    [4]. MONSTRO                       | ");
 			System.out.printf("\n *-------------------------------------* ");
 			System.out.printf("\n  Digite a classe do seu Personagem: ");
 			tipo = ler.nextInt();
