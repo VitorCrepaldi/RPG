@@ -21,8 +21,8 @@ public class Batalha {
 			}
 			
 			for(i=0;i<grupo.length;i++){
-				System.out.printf("\n *-----------------------------------------------------------------------* ");
 				System.out.printf("Nome: " + grupo[i].getNome() + " | Classe: " + grupo[i].getClasse());
+				System.out.printf("\n *-----------------------------------------------------------------------* ");
 				System.out.printf(" | Nível: " + grupo[i].getNivel() + " | Cash: " + grupo[i].getCash());
 				System.out.printf(" | Vida: " + grupo[i].getPv() + " | Mana: " + grupo[i].getPm() + "\n");
 				System.out.printf(" | Agilidade: " + grupo[i].getAgil() + " | Força: " + grupo[i].getForca());
@@ -34,7 +34,8 @@ public class Batalha {
 			ini[0] = new Personagem("Sua Mãe",4);
 			ini[1] = new Personagem("Regina Casé",4);
 			for(i=0;i<ini.length;i++){
-				System.out.printf("Nome: " + ini[i].getNome() + " | Classe: " + ini[i].getClasse());
+				System.out.printf("\n\n Nome: " + ini[i].getNome() + " | Classe: " + ini[i].getClasse());
+				System.out.printf("\n *-----------------------------------------------------------------------* ");
 				System.out.printf(" | Nível: " + ini[i].getNivel() + " | Cash: " + ini[i].getCash());
 				System.out.printf(" | Vida: " + ini[i].getPv() + " | Mana: " + ini[i].getPm() + "\n");
 				System.out.printf(" | Agilidade: " + ini[i].getAgil() + " | Força: " + ini[i].getForca());
