@@ -131,11 +131,11 @@ public class Batalha {
 		
 		//PEGA OS PONTOS DE MAGIA DO PERSONAGEM
 		public int verificaPM(Personagem[] grupo){
-			int i =0;
+			int j =0;
 			for(Personagem p: grupo){
-				i += p.getPm();
+				j += p.getPm();
 			}
-			return i;
+			return j;
 		}
 
 		
