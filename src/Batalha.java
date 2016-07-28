@@ -27,6 +27,18 @@ public class Batalha {
 				System.out.printf(" | Agilidade: " + grupo[i].getAgil() + " | Força: " + grupo[i].getForca());
 				System.out.printf(" | Inteligência: " + grupo[i].getIntel() + "\n");
 			}
+			Personagem[] ini = new Personagem[2];
+			System.out.printf("Inimigos:");
+			ini[0] = new Personagem("Sua Mãe",4);
+			ini[1] = new Personagem("Regina Casé",4);
+			for(i=0;i<ini.length;i++){
+				System.out.printf("Nome: " + ini[i].getNome() + " | Classe: " + ini[i].getClasse());
+				System.out.printf(" | Nível: " + ini[i].getNivel() + " | Cash: " + ini[i].getCash());
+				System.out.printf(" | Vida: " + ini[i].getPv() + " | Mana: " + ini[i].getPm() + "\n");
+				System.out.printf(" | Agilidade: " + ini[i].getAgil() + " | Força: " + ini[i].getForca());
+				System.out.printf(" | Inteligência: " + ini[i].getIntel() + "\n");
+			}
+			this.treta(grupo, ini);
 		}
 	
 		
@@ -52,10 +64,68 @@ public class Batalha {
 			return p;
 		}
 		
-		public void criaInimigo(){
-			ler = new Scanner(System.in);
-			
+		public Personagem escolheAtacante(Personagem[] grupo, Personagem[] ini){
+			Personagem ax = null;
+			for(Personagem p: grupo){
+				if(p.getTempoDescanso() == 0 && ax == null){
+					ax = p;
+				}else if(p.getTempoDescanso() == 0){
+					int sorte = (int)(Math.ceil(Math.random()*100)%2);
+					if(sorte == 0){
+						ax = p;
+					}
+				}
+			}
+			for(Personagem p: ini){
+				if(p.getTempoDescanso() == 0 && ax == null){
+					ax = p;
+				}else if(p.getTempoDescanso() == 0){
+					int sorte = (int)(Math.ceil(Math.random()*100)%2);
+					if(sorte == 0){
+						ax = p;
+					}
+				}
+			}
+			return ax;
 		}
+		
+		public void treta(Personagem[] grupo, Personagem[] ini){
+			Personagem[] atacados;
+			Personagem atacante;
+			System.out.printf("Treta iniciada!");
+			while(verificaPV(grupo) > 0 && verificaPV(ini) > 0){
+				atacante = this.escolheAtacante(grupo, ini);
+				if(atacante != null){
+					System.out.printf("O atacante é " + atacante.getNome());
+					if(verificaAtacante(grupo, atacante) == true){
+						atacados = ini;
+					}else{
+						atacados = grupo;
+					}
+					ler.nextInt();
+					
+				}
+			}
+		}
+		
+		public int verificaPV(Personagem[] grupo){
+			int i =0;
+			for(Personagem p: grupo){
+				i += p.getPv();
+			}
+			return i;
+		}
+		
+		public boolean verificaAtacante(Personagem[] grupo,Personagem atacante){
+			boolean retorno = false;
+			for(Personagem p: grupo){
+				if(p == atacante){
+					retorno = true;
+				}
+			}
+			return retorno;
+		}
+		
 
 	//for(x=0;x<2;x++){
 	//LIMITE DE 2 PERSONAGENS(SO PARA FAZER TESTE,DEPOIS QUERIA ADICIONAR UMA OPCAO PARA QUE O USUARIO POSSA
