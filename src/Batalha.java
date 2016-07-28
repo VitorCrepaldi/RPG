@@ -30,23 +30,25 @@ public class Batalha {
 				System.out.printf("\n *-----------------------------------------------------------------------* ");
 			}
 			Personagem[] ini = new Personagem[2];
-			System.out.printf("Inimigos:");
+			//CRIA OS INIMIGOS
+			System.out.printf("\nInimigos:\n");
 			ini[0] = new Personagem("Sua Mãe",4);
 			ini[1] = new Personagem("Regina Casé",4);
 			for(i=0;i<ini.length;i++){
 				System.out.printf("\n\n Nome: " + ini[i].getNome() + " | Classe: " + ini[i].getClasse());
 				System.out.printf("\n *-----------------------------------------------------------------------* ");
-				System.out.printf(" | Nível: " + ini[i].getNivel() + " | Cash: " + ini[i].getCash());
-				System.out.printf(" | Vida: " + ini[i].getPv() + " | Mana: " + ini[i].getPm() + "\n");
-				System.out.printf(" | Agilidade: " + ini[i].getAgil() + " | Força: " + ini[i].getForca());
-				System.out.printf(" | Inteligência: " + ini[i].getIntel() + "\n");
+				System.out.printf(" | \nNível: " + ini[i].getNivel() + " | Cash: " + ini[i].getCash());
+				System.out.printf(" | \nVida: " + ini[i].getPv() + " | Mana: " + ini[i].getPm() + "\n");
+				System.out.printf(" | \nAgilidade: " + ini[i].getAgil() + " | Força: " + ini[i].getForca());
+				System.out.printf(" | \nInteligência: " + ini[i].getIntel() + "\n");
 				System.out.printf("\n *-----------------------------------------------------------------------* ");
 			}
 			this.treta(grupo, ini);
 		}
 	
 		
-		
+		//CRIA PERSONAGEM
+		//LIMITE DE 2 PERSONAGENS(APENAS PARA TESTE)
 		public Personagem CriaPersonagem(){
 		ler = new Scanner(System.in);
 		String nome = null;
@@ -72,6 +74,7 @@ public class Batalha {
 			return p;
 		}
 		
+		//ESCOLHE QUEM VAI ATACAR PRIMEIRO
 		public Personagem escolheAtacante(Personagem[] grupo, Personagem[] ini){
 			Personagem ax = null;
 			for(Personagem p: grupo){
@@ -97,6 +100,7 @@ public class Batalha {
 			return ax;
 		}
 		
+		//MODULO DE BATALHA
 		public void treta(Personagem[] grupo, Personagem[] ini){
 			Personagem[] atacados;
 			Personagem atacante;
@@ -116,6 +120,7 @@ public class Batalha {
 			}
 		}
 		
+		//PEGA OS PONTOS DE VIDA DO PERSONAGEM
 		public int verificaPV(Personagem[] grupo){
 			int i =0;
 			for(Personagem p: grupo){
@@ -123,6 +128,17 @@ public class Batalha {
 			}
 			return i;
 		}
+		
+		//PEGA OS PONTOS DE MAGIA DO PERSONAGEM
+		public int verificaPM(Personagem[] grupo){
+			int i =0;
+			for(Personagem p: grupo){
+				i += p.getPm();
+			}
+			return i;
+		}
+
+		
 		
 		public boolean verificaAtacante(Personagem[] grupo,Personagem atacante){
 			boolean retorno = false;
